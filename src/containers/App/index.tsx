@@ -26,6 +26,8 @@ const App: React.FC = () => {
                                 todolst={lst}
                            ></TodoList>}
                     </div>
+                    //conflict
+//
                     //fghfghv6
 //
                 }
