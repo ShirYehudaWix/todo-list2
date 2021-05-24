@@ -1,3 +1,109 @@
+
+.flexContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding : 2% 0;
+}
 .root {
-    background-color: red;
+/*composes: flexContainer;*/
+    background-color: #9cc7d0;
+    height: 100vh;
+    width:70%;
+    margin: 0 auto;
+}
+.middlePage{
+    composes: flexContainer;
+    align-items: stretch;
+}
+
+.flexContained {
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #ffffff;
+    box-shadow: 2px 3px #e0d6da;
+    margin: 2%;
+    padding : 1% ;
+}
+
+.header{
+    composes:flexContainer;
+    align-self: start;
+    font-family: "Arial Black";
+    font-size: 210%;
+    /*text-align: center ;*/
+}
+
+.img{
+    display:block;
+    margin: 0 auto;
+}
+
+.addTask{
+    composes: flexContained;
+    composes: flexContainer;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+
+}
+
+.list{
+    list-style: none;
+   padding: 0;
+}
+
+.task{
+    border: 5px solid #ffffff;
+    box-shadow: 2px 3px #e0d6da;
+    margin: 1%;
+    position: relative;
+}
+.taskTitle{
+    padding-left: 3%;
+}
+
+.taskhome{
+    composes: task;
+    background-color: #b8ffc1;
+}
+.taskwork{
+    composes: task;
+    background-color: #ffd188;
+}
+.taskwife{
+    composes: task;
+    background-color: #f8c1ef;
+}
+.taskgarden{
+    composes: task;
+    background-color: #c8a99c;
+}
+
+.undone{
+composes: list;
+}
+
+.checked{
+    composes: list;
+}
+
+.differ{
+    border-bottom: 3px  solid #b7d8f3;
+}
+
+.checkbox{
+    position: absolute;
+    right: 4%;
+    top: 30%;
+    width: 20px;
+    height: 20px;
+}
+
+.checkedTask{
+    composes: task;
+      background-color: #e9e8e8;
+    color: #b8b0b8;
+    font-style: italic;
+    text-decoration: line-through;
 }
