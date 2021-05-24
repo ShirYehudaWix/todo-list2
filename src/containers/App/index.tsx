@@ -7,8 +7,8 @@ import {AddTask} from "../tasksMenager/AddTask";
 const App: React.FC = () => {
     const lst = [
         {id: 1, task: "go to the market",finished:true},
-        {id: 2, task: "feed the dog",labels:"home", finished: false},
-        {id:3, task: "feed the dog",labels:"garden", finished: false}
+        {id: 2, task: "feed the dog",labels:"Home", finished: false},
+        {id:3, task: "feed the dog",labels:"Garden", finished: false}
     ]
     const [todolst,setTodolst]=React.useState(lst);
     const [isEmpty, setIsEmpty] = React.useState(false)
@@ -23,13 +23,10 @@ const App: React.FC = () => {
                                         src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
                             :
                             <TodoList
-                                todolst={lst}
+                                todolst={todolst}
+                                setTodolst={setTodolst}
                            ></TodoList>}
                     </div>
-                    //conflict
-//
-                    //fghfghv6
-//
                 }
             </div>
         </div>

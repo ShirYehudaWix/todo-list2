@@ -63,19 +63,19 @@
     padding-left: 3%;
 }
 
-.taskhome{
+.taskHome{
     composes: task;
     background-color: #b8ffc1;
 }
-.taskwork{
+.taskWork{
     composes: task;
     background-color: #ffd188;
 }
-.taskwife{
+.taskWife{
     composes: task;
     background-color: #f8c1ef;
 }
-.taskgarden{
+.taskGarden{
     composes: task;
     background-color: #c8a99c;
 }

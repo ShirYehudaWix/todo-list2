@@ -9,10 +9,11 @@ export const AddTask = () => {
                 <input type="text"/><br></br><br></br>
                 {"Labels? "}
                 <select>
-                    <option>work</option>
-                    <option value="home">home</option>
-                    <option>wife</option>
-                    <option>garden</option>
+                    <option value="">None</option>
+                    <option value="Work">Work</option>
+                    <option value="Home">Home</option>
+                    <option value="Wife">Wife</option>
+                    <option value="Garden">Garden</option>
                 </select><br></br><br></br>
                 <button>Add Task</button>
                 <button>Cancle</button>
