@@ -18,7 +18,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
             {
                 props.todolst.map((todo) => (
                     (todo.finished === finish) &&
-                    <li id={todo.id.toString()}
+                    <li key={todo.id} id={todo.id.toString()}
                         className={style[!todo.finished ? ("task" + (todo.labels ? todo.labels : "")) : "checkedTask"]}>
                         <h4 className={style.taskTitle}>ToDo: {todo.task}</h4>
                         <input type="checkbox" className={style.checkbox} checked={todo.finished}

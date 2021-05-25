@@ -31,12 +31,13 @@
     align-self: start;
     font-family: "Arial Black";
     font-size: 210%;
-    /*text-align: center ;*/
+    text-align: center ;
 }
 
 .img{
     display:block;
     margin: 0 auto;
+    width :100%
 }
 
 .addTask{
@@ -106,4 +107,76 @@ composes: list;
     color: #b8b0b8;
     font-style: italic;
     text-decoration: line-through;
+}
+
+.addButton{
+    font-weight: bolder;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    /*position: fixed;*/
+    /*margin-right:  -30%;*/
+    /*margin-top: -10%;*/
+    position:fixed;
+    top:10px;
+    right:10px;
+    background-color: #9cc7d0;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 10px #406c74;
+}
+.addButton:hover{
+    background: linear-gradient(0deg, rgba(156,199,208,1) 0%, rgba(182,230,244,1) 100%)
+}
+
+.form{
+    background-color: #b6e6f4;
+    padding :3%;
+    width: 35%;
+    min-width: 275px;
+}
+
+.formInput{
+    width: 93%;
+    padding: 3%;
+    margin-right: -15px;
+    outline: none;
+
+}
+
+.formButton{
+    background: linear-gradient(0deg, rgb(92, 132, 146) 0%, rgb(121, 174, 189) 100%);
+padding:4%;
+    color: #95dde9;
+    border: none;
+    border-radius: 5px ;
+    width: 45%
+}
+
+.formButton:hover{
+    background: linear-gradient(0deg, rgb(71, 101, 112) 0%, rgb(99, 142, 154) 100%);
+    box-shadow: 1px 1px 5px #406c74;
+}
+
+.formAddButton{
+    composes: formButton;
+    margin-right: 2%;
+}
+
+.formCancelButton{
+    composes: formButton;
+    float: right;
+}
+
+.formSelector{
+
+    background-color: #638e9a;
+    color: white;
+    padding: 3%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    /*-webkit-appearance: button;*/
+    outline: none;
 }
