@@ -43,9 +43,6 @@
 .addTask{
     composes: flexContained;
     composes: flexContainer;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
 
 }
 
