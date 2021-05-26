@@ -24,15 +24,13 @@ export interface IRootState {
 //       demo: reducer
 //     }));
 
-// const store: Store<TaskState, TaskAction> & {
-//   dispatch: DispatchType
-// } = createStore(reducer, applyMiddleware(thunk))
-const store = configureStore({
-  reducer: rootReducer,
-});
+const store: Store<TaskState, TaskAction> & {
+  dispatch: DispatchType
+} = createStore(reducer, applyMiddleware(thunk));
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 export type AppDispatch = typeof store.dispatch;
+
 
 export default store;

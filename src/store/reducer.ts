@@ -10,7 +10,6 @@ const initialState: TaskState = {
         {id: 3, task: "feed the dog", labels: "Garden", finished: false}
     ]
 }
-
 const reducer = (
     state: TaskState = initialState,
     action: TaskAction
