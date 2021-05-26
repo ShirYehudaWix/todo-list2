@@ -2,6 +2,8 @@ import * as React from 'react';
 import style from '../App/App.module.css';
 import {PropsForTodoList} from "../../utils/interfaces";
 import {Task} from "./Task";
+import {TaskState} from "../../store/types";
+import {connect} from "react-redux";
 
 
 export const TodoList = (props: PropsForTodoList): JSX.Element => {
@@ -39,3 +41,9 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
     )
 
 }
+
+const mapStateToProps=(state:TaskState)=>{
+    return {todolst:state.todolst}
+}
+
+export const WrappedTodoList = connect(mapStateToProps)(TodoList)

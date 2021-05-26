@@ -1,6 +1,7 @@
 import * as actionTypes from "./actionTypes"
 import {TaskAction, TaskState} from "./types";
 import {todoTask} from "../utils/interfaces";
+import {AnyAction} from "redux";
 
 const initialState: TaskState = {
     todolst: [
@@ -13,7 +14,7 @@ const initialState: TaskState = {
 
 const reducer = (
     state: TaskState = initialState,
-    action: TaskAction
+    action: AnyAction
 ): TaskState => {
     switch (action.type) {
         case actionTypes.ADD_TASK:
@@ -24,8 +25,8 @@ const reducer = (
                 finished: action.task.finished,
             }
             return {
-                ...state,
-                todolst: state.todolst.concat(newTask),
+
+                todolst: [...state.todolst,newTask],
             }
         // case actionTypes.REMOVE_ARTICLE:
         //     const updatedArticles: IArticle[] = state.articles.filter(

@@ -2,6 +2,10 @@ export interface PropsForTodoList {
     todolst: todoTask[],
     setTodolst: (todolst: (todoTask)[]) => void;
 }
+export interface PropsForApp {
+    todolst: todoTask[],
+    setTodolst: (todolst: (todoTask)[]) => void;
+}
 
 export interface todoTask {
     id: number,
@@ -12,7 +16,7 @@ export interface todoTask {
 
 export interface PropsForAddTask {
     todolst: todoTask[],
-    setTodolst: (todolst: (todoTask)[]) => void,
+    setTodolst: (todolst: todoTask) => void,
     setIsAddTaskOpen: (someVar: boolean) => void
 }
 
