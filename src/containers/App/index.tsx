@@ -7,17 +7,10 @@ import {todoTask} from "../../utils/interfaces";
 import {AddButton} from "../AddButton";
 
 const App: React.FC = () => {
-    const lst:todoTask[] = [
-        // {id: 1, task: "go to the market",labels: "",finished:true},
-        // {id: 2, task: "feed the dog",labels:"Home", finished: false},
-        // {id:3, task: "feed the dog",labels:"Garden", finished: false}
-
-    ]
+    const lst:todoTask[] = [ ]
 
     const [isAddTaskOpen,setIsAddTaskOpen]=React.useState(false)
     const [todolst,setTodolst]=React.useState([] as todoTask[]);
-    const [isEmpty, setIsEmpty] = React.useState(true)
-    const setIsEmptyDecorator=()=>setIsEmpty(false);
 
 
     return (
@@ -30,7 +23,6 @@ const App: React.FC = () => {
                         setIsAddTaskOpen={setIsAddTaskOpen} 
                         setTodolst={setTodolst} 
                         todolst={todolst}
-                        setIsEmpty={setIsEmptyDecorator} 
                     />
                 }
                 {

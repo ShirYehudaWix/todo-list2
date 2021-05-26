@@ -13,7 +13,6 @@ export interface todoTask {
 export interface PropsForAddTask {
     todolst: todoTask[],
     setTodolst: (todolst: (todoTask)[]) => void,
-    setIsEmpty: () => void,
     setIsAddTaskOpen: (someVar: boolean) => void
 }
 

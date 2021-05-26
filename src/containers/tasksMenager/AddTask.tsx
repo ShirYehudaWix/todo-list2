@@ -10,7 +10,6 @@ export const AddTask = (props: PropsForAddTask) => {
         const newTask: todoTask = {id: Math.random() % 1000, task: title, labels: label, finished: false}
         const newTodolst = [...props.todolst, newTask]// as todoTask[]
         props.setTodolst(newTodolst)
-        props.setIsEmpty();
         props.setIsAddTaskOpen(false)
     }
 

@@ -9,7 +9,7 @@ export const Task = (props: PropsForTask) => {
             className={style[!props.task.finished ? ("task" + (props.task.labels ? props.task.labels : "")) : "checkedTask"]}>
             <h4 className={style.taskTitle}>ToDo: {props.task.task}</h4>
             <input type="checkbox" className={style.checkbox} checked={props.task.finished}
-                   onChange={() => props.setChecked}/>
+                   onChange={() => props.setChecked(props.task.id)}/>
         </li>
     )
 }
