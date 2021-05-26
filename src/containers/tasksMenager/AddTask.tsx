@@ -19,8 +19,8 @@ export const AddTask = (props: PropsForAddTask) => {
     return (
         <div className={style.addTask}>
             <form className={style.form}>
-                <input type="text"  className={style.formInput} placeholder="What Do I Want To Accomplish?" onChange={(e) => setTitle(e.target.value)}/><br></br><br></br>
-                {/*{"Labels? "}*/}
+                <input type="text" className={style.formInput} placeholder="What Do I Want To Accomplish?"
+                       onChange={(e) => setTitle(e.target.value)}/><br/><br/>
                 <select className={style.formSelector} onChange={(e) => {
                     setLabel(e.target.value)
                 }}>
@@ -29,7 +29,7 @@ export const AddTask = (props: PropsForAddTask) => {
                     <option value="Home">Home</option>
                     <option value="Wife">Wife</option>
                     <option value="Garden">Garden</option>
-                </select><br></br><br></br>
+                </select><br/><br/>
                 <button className={style.formButton} onClick={(e) => addTask(e)}>Add Task</button>
                 <button className={style.formCancelButton} onClick={cancelPress}>Cancel</button>
             </form>
