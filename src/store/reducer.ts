@@ -4,12 +4,7 @@ import {todoTask} from "../utils/interfaces";
 import {AnyAction} from "redux";
 
 const initialState: TaskState = {
-    todolst: [
-
-        {id: 1, task: "go to the market", labels: "", finished: true},
-        {id: 2, task: "feed the dog", labels: "Home", finished: false},
-        {id: 3, task: "feed the dog", labels: "Garden", finished: false}
-    ]
+    todolst: [ ]
 }
 
 const reducer = (

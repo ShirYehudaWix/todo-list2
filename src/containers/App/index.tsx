@@ -12,7 +12,6 @@ const App = (props:PropsForApp) => {
     const lst:todoTask[] = [ ]
 
     const [isAddTaskOpen,setIsAddTaskOpen]=React.useState(false)
-    const [todolst,setTodolst]=React.useState([] as todoTask[]);
 
 
     return (
@@ -22,9 +21,7 @@ const App = (props:PropsForApp) => {
             <div className={style.middlePage}>
                 { isAddTaskOpen && 
                     <WrappedAddTask
-                        setIsAddTaskOpen={setIsAddTaskOpen} 
-                        // setTodolst={setTodolst}
-                        todolst={props.todolst}
+                        setIsAddTaskOpen={setIsAddTaskOpen}
                     />
                 }
                 {
@@ -34,9 +31,8 @@ const App = (props:PropsForApp) => {
                            props.todolst.length==0 ?
                                 <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
                             :
-                            <WrappedTodoList
-                                setTodolst={setTodolst}
-                           />}
+                            <WrappedTodoList />
+                        }
                     </div>
                 }
             </div>

@@ -11,7 +11,6 @@ export const AddTask = (props: PropsForAddTask) => {
     const addTask = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         const newTask: todoTask = {id: Math.random() % 1000, task: title, labels: label, finished: false}
-        const newTodolst = [...props.todolst, newTask]// as todoTask[]
         props.setTodolst(newTask)
         props.setIsAddTaskOpen(false)
     }
