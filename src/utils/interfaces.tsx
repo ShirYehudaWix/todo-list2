@@ -10,16 +10,22 @@ export interface todoTask {
     finished: boolean
 }
 
-export interface PropsForAddTask{
+export interface PropsForAddTask {
     todolst: todoTask[],
     setTodolst: (todolst: (todoTask)[]) => void,
-    setIsEmpty:()=>void,
-    setIsAddTaskOpen:(someVar:boolean)=>void
+    setIsEmpty: () => void,
+    setIsAddTaskOpen: (someVar: boolean) => void
 }
 
-export interface PropsForAddButton{
+export interface PropsForAddButton {
 
-    isAddTaskOpen:boolean,
-    setIsAddTaskOpen:(someVar:boolean)=>void
+    isAddTaskOpen: boolean,
+    setIsAddTaskOpen: (someVar: boolean) => void
 
 }
+
+export interface PropsForTask {
+    task: todoTask,
+    setChecked:(id:number)=>void
+}
+

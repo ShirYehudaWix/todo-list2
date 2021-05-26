@@ -22,20 +22,28 @@ const App: React.FC = () => {
 
     return (
         <div className={style.root}>
-            <Header></Header>
+            <Header />
             <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}></AddButton>
             <div className={style.middlePage}>
-                {isAddTaskOpen&&<AddTask setIsAddTaskOpen={setIsAddTaskOpen} setTodolst={setTodolst} todolst={todolst}
-                                                       setIsEmpty={setIsEmptyDecorator}></AddTask>}
+                { isAddTaskOpen && 
+                    <AddTask 
+                        setIsAddTaskOpen={setIsAddTaskOpen} 
+                        setTodolst={setTodolst} 
+                        todolst={todolst}
+                        setIsEmpty={setIsEmptyDecorator} 
+                    />
+                }
                 {
-                    !isAddTaskOpen&&<div className={style.flexContained}>
-                        {isEmpty ? <img className={style.img}
-                                        src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
+                    !isAddTaskOpen &&
+                    <div className={style.flexContained}>
+                        {
+                            isEmpty ? 
+                                <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
                             :
                             <TodoList
                                 todolst={todolst}
                                 setTodolst={setTodolst}
-                           ></TodoList>}
+                           />}
                     </div>
                 }
             </div>

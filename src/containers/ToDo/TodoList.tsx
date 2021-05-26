@@ -1,6 +1,7 @@
 import * as React from 'react';
 import style from '../App/App.module.css';
 import {PropsForTodoList} from "../../utils/interfaces";
+import {Task} from "./Task";
 
 
 export const TodoList = (props: PropsForTodoList): JSX.Element => {
@@ -18,16 +19,11 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
             {
                 props.todolst.map((todo) => (
                     (todo.finished === finish) &&
-                    <li key={todo.id} id={todo.id.toString()}
-                        className={style[!todo.finished ? ("task" + (todo.labels ? todo.labels : "")) : "checkedTask"]}>
-                        <h4 className={style.taskTitle}>ToDo: {todo.task}</h4>
-                        <input type="checkbox" className={style.checkbox} checked={todo.finished}
-                               onChange={() => changecheck(todo.id)}/>
-                    </li>
+                    <Task task={todo} setChecked={changecheck}/>
                 ))
             }
         </ul>
-    }
+    };
 
 
     return (
@@ -35,7 +31,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
             {
                 listGenerator(false, style.undone)
             }
-            <div className={style.differ}></div>
+            <div className={style.differ}/>
             {
                 listGenerator(true, style.checked)
             }
