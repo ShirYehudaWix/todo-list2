@@ -26,7 +26,14 @@ const reducer = (
             }
             return {
 
-                todolst: [...state.todolst,newTask],
+                todolst: [...state.todolst, newTask],
+            }
+        case actionTypes.UPDATE_TASK_FINISHED:
+            const UpdatingIndex=state.todolst.findIndex(todo=>todo.id===action.id)
+            const newList=state.todolst;
+            newList[UpdatingIndex].finished=!newList[UpdatingIndex].finished;
+            return{
+                todolst:[...newList]
             }
         // case actionTypes.REMOVE_ARTICLE:
         //     const updatedArticles: IArticle[] = state.articles.filter(

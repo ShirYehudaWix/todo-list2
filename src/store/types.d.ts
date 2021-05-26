@@ -14,10 +14,11 @@ type TaskAction = {
     type: string
     task: todoTask
 }
-type ActionForAddTask = {
+type ActionForTask = {
     type: string
-    task: todoTask
+    id: number
 }
 
 type DispatchType = (args: TaskAction) => TaskAction
 type DispatchForAddTask = (args: TaskAction) => TaskAction
+type DispatchForTask = (args: ActionForTask) => ActionForTask

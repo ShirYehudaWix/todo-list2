@@ -1,7 +1,7 @@
 import * as React from 'react';
 import style from '../App/App.module.css';
 import {PropsForTodoList} from "../../utils/interfaces";
-import {Task} from "./Task";
+import {Task, WrappedTask} from "./Task";
 import {TaskState} from "../../store/types";
 import {connect} from "react-redux";
 
@@ -21,7 +21,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
             {
                 props.todolst.map((todo) => (
                     (todo.finished === finish) &&
-                    <Task task={todo} setChecked={changecheck}/>
+                    <WrappedTask task={todo} />
                 ))
             }
         </ul>
