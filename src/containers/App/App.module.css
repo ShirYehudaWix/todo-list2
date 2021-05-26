@@ -22,7 +22,6 @@
     composes: flexContainer;
     align-items: stretch;
 }
-
 .flexContained {
     background-color: white;
     border-radius: 15px;
