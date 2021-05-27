@@ -8,10 +8,13 @@ import {AddButton} from "../AddButton";
 import {connect} from "react-redux";
 import {TaskState} from "../../store/types";
 
+
 const App = (props:PropsForApp) => {
     const lst:todoTask[] = [ ]
 
     const [isAddTaskOpen,setIsAddTaskOpen]=React.useState(false)
+
+
 
 
     return (

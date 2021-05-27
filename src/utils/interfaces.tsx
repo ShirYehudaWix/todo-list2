@@ -23,7 +23,6 @@ export interface PropsForAddButton {
 
     isAddTaskOpen: boolean,
     setIsAddTaskOpen: (someVar: boolean) => void
-
 }
 
 export interface PropsForTask {
