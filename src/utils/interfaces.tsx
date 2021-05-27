@@ -1,5 +1,9 @@
 export interface PropsForTodoList {
     todolst: todoTask[],
+    // setTodolst: (todolst: (todoTask)[]) => void;
+}
+export interface PropsForApp {
+    todolst: todoTask[],
     setTodolst: (todolst: (todoTask)[]) => void;
 }
 
@@ -11,8 +15,7 @@ export interface todoTask {
 }
 
 export interface PropsForAddTask {
-    todolst: todoTask[],
-    setTodolst: (todolst: (todoTask)[]) => void,
+    setTodolst: (todolst: todoTask) => void,
     setIsAddTaskOpen: (someVar: boolean) => void
 }
 
@@ -20,7 +23,6 @@ export interface PropsForAddButton {
 
     isAddTaskOpen: boolean,
     setIsAddTaskOpen: (someVar: boolean) => void
-
 }
 
 export interface PropsForTask {

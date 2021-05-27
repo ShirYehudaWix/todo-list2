@@ -1,6 +1,9 @@
 import style from "../App/App.module.css";
 import * as React from "react";
 import {PropsForTask} from "../../utils/interfaces";
+import {connect} from "react-redux";
+import {UPDATE_TASK_FINISHED} from "../../store/actionTypes";
+import {DispatchForTask} from "../../store/types";
 
 
 export const Task = (props: PropsForTask) => {
@@ -13,3 +16,7 @@ export const Task = (props: PropsForTask) => {
         </li>
     )
 }
+const mapDispachToProps=(dispach:DispatchForTask)=>{
+    return{setChecked:(id:number)=>dispach({type:UPDATE_TASK_FINISHED,id:id})}
+}
+export const WrappedTask = connect(null,mapDispachToProps)(Task)

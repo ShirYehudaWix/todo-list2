@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 
 import store from './store';
-import App from "./containers/App";
+import {WrappedApp} from "./containers/App";
 import './index.css';
 
 import { render } from "react-dom"
@@ -19,7 +19,7 @@ import {DispatchType, TaskAction, TaskState} from "./store/types";
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <WrappedApp />
     </Provider>,
     document.getElementById('root')
 );

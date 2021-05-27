@@ -1,16 +1,20 @@
 import * as React from 'react';
 import style from './App.module.css';
-import {TodoList} from "../ToDo/TodoList";
+import {TodoList, WrappedTodoList} from "../ToDo/TodoList";
 import {Header} from "../header/header";
-import {AddTask} from "../tasksMenager/AddTask";
-import {todoTask} from "../../utils/interfaces";
+import {AddTask, WrappedAddTask} from "../tasksMenager/AddTask";
+import {PropsForApp, todoTask} from "../../utils/interfaces";
 import {AddButton} from "../AddButton";
+import {connect} from "react-redux";
+import {TaskState} from "../../store/types";
 
-const App: React.FC = () => {
+
+const App = (props:PropsForApp) => {
     const lst:todoTask[] = [ ]
 
     const [isAddTaskOpen,setIsAddTaskOpen]=React.useState(false)
-    const [todolst,setTodolst]=React.useState([] as todoTask[]);
+
+
 
 
     return (
@@ -19,28 +23,27 @@ const App: React.FC = () => {
             <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}></AddButton>
             <div className={style.middlePage}>
                 { isAddTaskOpen && 
-                    <AddTask 
-                        setIsAddTaskOpen={setIsAddTaskOpen} 
-                        setTodolst={setTodolst} 
-                        todolst={todolst}
+                    <WrappedAddTask
+                        setIsAddTaskOpen={setIsAddTaskOpen}
                     />
                 }
                 {
                     !isAddTaskOpen &&
                     <div className={style.flexContained}>
                         {
-                           todolst.length==0 ?
+                           props.todolst.length==0 ?
                                 <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
                             :
-                            <TodoList
-                                todolst={todolst}
-                                setTodolst={setTodolst}
-                           />}
+                            <WrappedTodoList />
+                        }
                     </div>
                 }
             </div>
         </div>
     );
 };
+const mapStateToProps=(state:TaskState)=>{
+    return {todolst:state.todolst}
+}
 
-export default App;
+export  const WrappedApp=connect(mapStateToProps)(App);
