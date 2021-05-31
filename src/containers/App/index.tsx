@@ -1,12 +1,12 @@
 import * as React from 'react';
 import style from './App.module.css';
-import {WrappedTodoList} from "../ToDo/TodoList";
 import {Header} from "../header/header";
-import {WrappedAddTask} from "../tasksMenager/AddTask";
 import {PropsForApp} from "../../utils/interfaces";
 import {AddButton} from "../AddButton";
 import {connect} from "react-redux";
 import {TaskState} from "../../store/types";
+import {WrappedAddTask} from "../tasksMenager/WrappedAddTask";
+import {WrappedTodoList} from "../ToDo/WrappedTodoList";
 
 const App = (props: PropsForApp) => {
     const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false)

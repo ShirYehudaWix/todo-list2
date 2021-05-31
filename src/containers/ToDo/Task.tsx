@@ -1,9 +1,6 @@
 import style from "../App/App.module.css";
 import * as React from "react";
 import {PropsForTask} from "../../utils/interfaces";
-import {connect} from "react-redux";
-import {UPDATE_TASK_FINISHED} from "../../store/actionTypes";
-import {DispatchForTask, TaskState} from "../../store/types";
 
 export const Task = (props: PropsForTask) => {
     return (
@@ -16,13 +13,3 @@ export const Task = (props: PropsForTask) => {
     )
 }
 
-const mapStateToProps = (state: TaskState, ownProps: PropsForTask) => {
-    const index = state.todolst.findIndex(t => t.id === ownProps.id)
-    return {task: state.todolst[index]}
-}
-
-const mapDispachToProps = (dispach: DispatchForTask) => {
-    return {setChecked: (id: number) => dispach({type: UPDATE_TASK_FINISHED, id: id})}
-}
-
-export const WrappedTask = connect(mapStateToProps, mapDispachToProps)(Task)
