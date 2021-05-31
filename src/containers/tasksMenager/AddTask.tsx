@@ -34,4 +34,3 @@ export const AddTask = (props: PropsForAddTask) => {
         </div>
     )
 }
-
