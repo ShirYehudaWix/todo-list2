@@ -38,11 +38,11 @@ export const AddTask = (props: PropsForAddTask) => {
     )
 }
 
-const mapDispachToProps=(dispach:DispatchForAddTask)=>{
+const mapDispachToProps = (dispach: DispatchForAddTask) => {
     return {
-        setTodolst:(task:todoTask)=>dispach({type:ADD_TASK,task:task})
+        setTodolst: (task: todoTask) => dispach({type: ADD_TASK, task: task})
 
     }
 }
 
-export const WrappedAddTask= connect(null, mapDispachToProps)(AddTask)
+export const WrappedAddTask = connect(null, mapDispachToProps)(AddTask)

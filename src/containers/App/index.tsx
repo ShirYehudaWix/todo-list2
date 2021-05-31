@@ -1,40 +1,34 @@
 import * as React from 'react';
 import style from './App.module.css';
-import {TodoList, WrappedTodoList} from "../ToDo/TodoList";
+import {WrappedTodoList} from "../ToDo/TodoList";
 import {Header} from "../header/header";
-import {AddTask, WrappedAddTask} from "../tasksMenager/AddTask";
-import {PropsForApp, todoTask} from "../../utils/interfaces";
+import {WrappedAddTask} from "../tasksMenager/AddTask";
+import {PropsForApp} from "../../utils/interfaces";
 import {AddButton} from "../AddButton";
 import {connect} from "react-redux";
 import {TaskState} from "../../store/types";
 
-
-const App = (props:PropsForApp) => {
-    const lst:todoTask[] = [ ]
-
-    const [isAddTaskOpen,setIsAddTaskOpen]=React.useState(false)
-
-
-
+const App = (props: PropsForApp) => {
+    const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false)
 
     return (
         <div className={style.root}>
-            <Header />
-            <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}></AddButton>
+            <Header/>
+            <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}/>
             <div className={style.middlePage}>
-                { isAddTaskOpen && 
-                    <WrappedAddTask
-                        setIsAddTaskOpen={setIsAddTaskOpen}
-                    />
+                {isAddTaskOpen &&
+                <WrappedAddTask
+                    setIsAddTaskOpen={setIsAddTaskOpen}/>
                 }
                 {
                     !isAddTaskOpen &&
                     <div className={style.flexContained}>
                         {
-                           props.todolst.length==0 ?
-                                <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
-                            :
-                            <WrappedTodoList />
+                            props.todolst.length == 0 ?
+                                <img className={style.img}
+                                     src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"/>
+                                :
+                                <WrappedTodoList/>
                         }
                     </div>
                 }
@@ -42,8 +36,8 @@ const App = (props:PropsForApp) => {
         </div>
     );
 };
-const mapStateToProps=(state:TaskState)=>{
-    return {todolst:state.todolst}
+const mapStateToProps = (state: TaskState) => {
+    return {todolst: state.todolst}
 }
 
-export  const WrappedApp=connect(mapStateToProps)(App);
+export const WrappedApp = connect(mapStateToProps)(App);

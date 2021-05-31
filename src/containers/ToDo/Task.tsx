@@ -3,8 +3,7 @@ import * as React from "react";
 import {PropsForTask} from "../../utils/interfaces";
 import {connect} from "react-redux";
 import {UPDATE_TASK_FINISHED} from "../../store/actionTypes";
-import {DispatchForTask} from "../../store/types";
-
+import {DispatchForTask, TaskState} from "../../store/types";
 
 export const Task = (props: PropsForTask) => {
     return (
@@ -16,7 +15,14 @@ export const Task = (props: PropsForTask) => {
         </li>
     )
 }
-const mapDispachToProps=(dispach:DispatchForTask)=>{
-    return{setChecked:(id:number)=>dispach({type:UPDATE_TASK_FINISHED,id:id})}
+
+const mapStateToProps = (state: TaskState, ownProps: PropsForTask) => {
+    const index = state.todolst.findIndex(t => t.id === ownProps.id)
+    return {task: state.todolst[index]}
 }
-export const WrappedTask = connect(null,mapDispachToProps)(Task)
+
+const mapDispachToProps = (dispach: DispatchForTask) => {
+    return {setChecked: (id: number) => dispach({type: UPDATE_TASK_FINISHED, id: id})}
+}
+
+export const WrappedTask = connect(mapStateToProps, mapDispachToProps)(Task)
