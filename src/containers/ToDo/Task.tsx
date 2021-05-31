@@ -12,4 +12,3 @@ export const Task = (props: PropsForTask) => {
         </li>
     )
 }
-
