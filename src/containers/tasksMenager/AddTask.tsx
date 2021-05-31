@@ -1,9 +1,6 @@
 import * as React from 'react';
 import style from '../App/App.module.css'
 import {PropsForAddTask, todoTask} from "../../utils/interfaces";
-import {DispatchForAddTask} from "../../store/types";
-import {ADD_TASK} from "../../store/actionTypes";
-import {connect} from "react-redux";
 
 export const AddTask = (props: PropsForAddTask) => {
     const [title, setTitle] = React.useState("")
@@ -37,12 +34,3 @@ export const AddTask = (props: PropsForAddTask) => {
         </div>
     )
 }
-
-const mapDispachToProps = (dispach: DispatchForAddTask) => {
-    return {
-        setTodolst: (task: todoTask) => dispach({type: ADD_TASK, task: task})
-
-    }
-}
-
-export const WrappedAddTask = connect(null, mapDispachToProps)(AddTask)
