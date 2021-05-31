@@ -10,7 +10,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
         return <ul className={classType}>{
             props.todolst.map((todo) => (
                 (todo.finished === finish) &&
-                <WrappedTask id={todo.id}/>
+                <WrappedTask key={todo.id} id={todo.id}/>
             ))
         }
         </ul>
