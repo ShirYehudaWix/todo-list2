@@ -13,7 +13,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
             {
                 props.todolst.map((todo) => (
                     (todo.finished === finish) &&
-                    <WrappedTask task={todo} />
+                    <WrappedTask id={todo.id} />
                 ))
             }
         </ul>

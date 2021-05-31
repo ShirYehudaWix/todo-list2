@@ -27,6 +27,7 @@ export interface PropsForAddButton {
 
 export interface PropsForTask {
     task: todoTask,
+    id:number,
     setChecked:(id:number)=>void
 }
 

@@ -20,19 +20,18 @@ const App = (props:PropsForApp) => {
     return (
         <div className={style.root}>
             <Header />
-            <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}></AddButton>
+            <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}/>
             <div className={style.middlePage}>
                 { isAddTaskOpen && 
                     <WrappedAddTask
-                        setIsAddTaskOpen={setIsAddTaskOpen}
-                    />
+                        setIsAddTaskOpen={setIsAddTaskOpen} />
                 }
                 {
                     !isAddTaskOpen &&
                     <div className={style.flexContained}>
                         {
                            props.todolst.length==0 ?
-                                <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"></img>
+                                <img className={style.img} src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"/>
                             :
                             <WrappedTodoList />
                         }

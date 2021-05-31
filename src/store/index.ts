@@ -5,9 +5,9 @@ import {todoTask} from "../utils/interfaces";
 import reducer from "./reducer";
 import {DispatchType, TaskAction, TaskState} from "./types";
 
-export const rootReducer = combineReducers({
-  todos: (state = {}, action) => ({})
-});
+// export const rootReducer = combineReducers({
+//   todos: (state = {}, action) => ({})
+// });
 
 const initialState={
   isAddTaskOpen:false,
@@ -19,18 +19,12 @@ const initialState={
 export interface IRootState {
   demo: todoTask[]
 }
-// const store = createStore<IRootState>(
-//     combineReducers({
-//       demo: reducer
-//     }));
-
 
 const store: Store<TaskState, TaskAction> & {
   dispatch: DispatchType
-} = createStore(reducer, applyMiddleware(thunk));
+} = createStore(reducer);
 
-export type RootState = ReturnType<typeof rootReducer>;
-export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
+// export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
 
 
