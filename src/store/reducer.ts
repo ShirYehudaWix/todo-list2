@@ -1,10 +1,10 @@
 import * as actionTypes from "./actionTypes"
-import {TaskAction, TaskState} from "./types";
+import {TaskState} from "./types";
 import {todoTask} from "../utils/interfaces";
 import {AnyAction} from "redux";
 
 const initialState: TaskState = {
-    todolst: [ ]
+    todolst: []
 }
 
 const reducer = (
@@ -20,28 +20,18 @@ const reducer = (
                 finished: action.task.finished,
             }
             return {
-
                 todolst: [...state.todolst, newTask],
             }
         case actionTypes.UPDATE_TASK_FINISHED:
-            const UpdatingIndex=state.todolst.findIndex(todo=>todo.id===action.id)
-            const newList=state.todolst;
-            newList[UpdatingIndex].finished=!newList[UpdatingIndex].finished;
-            return{
-                todolst:[...newList]
+            const UpdatingIndex = state.todolst.findIndex(todo => todo.id === action.id)
+            const newList = state.todolst;
+            newList[UpdatingIndex].finished = !newList[UpdatingIndex].finished;
+            return {
+                todolst: [...newList]
             }
-        // case actionTypes.REMOVE_ARTICLE:
-        //     const updatedArticles: IArticle[] = state.articles.filter(
-        //         article => article.id !== action.article.id
-        //     )
-        //     return {
-        //         ...state,
-        //         articles: updatedArticles,
-        //     }
         default:
             return state
     }
-    // return state
 }
 
 export default reducer

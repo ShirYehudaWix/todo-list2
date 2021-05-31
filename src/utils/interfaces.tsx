@@ -1,7 +1,7 @@
 export interface PropsForTodoList {
-    todolst: todoTask[],
-    // setTodolst: (todolst: (todoTask)[]) => void;
+    todolst: todoTask[]
 }
+
 export interface PropsForApp {
     todolst: todoTask[],
     setTodolst: (todolst: (todoTask)[]) => void;
@@ -27,7 +27,7 @@ export interface PropsForAddButton {
 
 export interface PropsForTask {
     task: todoTask,
-    id:number,
-    setChecked:(id:number)=>void
+    id: number,
+    setChecked: (id: number) => void
 }
 

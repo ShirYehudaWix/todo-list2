@@ -7,7 +7,6 @@ export const AddButton = (props: PropsForAddButton) => {
         props.setIsAddTaskOpen(true)
     }
     return (
-
         <>
             {!props.isAddTaskOpen && <button className={style.addButton} onClick={openAddTask}>+</button>}
         </>
