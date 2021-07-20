@@ -3,8 +3,8 @@ import {Provider} from 'react-redux';
 import ReactDOM from 'react-dom';
 
 import store from './store';
-import {WrappedApp} from "./containers/App";
 import './index.css';
+import {WrappedApp} from "./components/App/ConnectedApp";
 
 ReactDOM.render(
     <Provider store={store}>

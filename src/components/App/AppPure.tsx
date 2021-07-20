@@ -1,14 +1,12 @@
 import * as React from 'react';
 import style from './App.module.css';
 import {Header} from "../header/header";
-import {PropsForApp} from "../../utils/interfaces";
-import {AddButton} from "../AddButton";
-import {connect} from "react-redux";
-import {TaskState} from "../../store/types";
-import {WrappedAddTask} from "../tasksMenager/WrappedAddTask";
-import {WrappedTodoList} from "../ToDo/WrappedTodoList";
+import {AddButton} from "../button/AddButton";
+import {ConnectedAddTask} from "../addTask/ConnectedAddTask";
+import {ConnectedTodoList} from "../toDoList/ConnectedTodoList";
+import {PropsForApp} from "./types";
 
-const App = (props: PropsForApp) => {
+export const App = (props: PropsForApp) => {
     const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false)
 
     return (
@@ -16,10 +14,7 @@ const App = (props: PropsForApp) => {
             <Header/>
             <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}/>
             <div className={style.middlePage}>
-                {isAddTaskOpen &&
-                <WrappedAddTask
-                    setIsAddTaskOpen={setIsAddTaskOpen}/>
-                }
+                {isAddTaskOpen && <ConnectedAddTask setIsAddTaskOpen={setIsAddTaskOpen}/>}
                 {
                     !isAddTaskOpen &&
                     <div className={style.flexContained}>
@@ -28,7 +23,7 @@ const App = (props: PropsForApp) => {
                                 <img className={style.img}
                                      src="https://organisemyhouse.com/wp-content/uploads/2013/04/143.-EMPTY-TO-DO-LIST-2.jpg"/>
                                 :
-                                <WrappedTodoList/>
+                                <ConnectedTodoList/>
                         }
                     </div>
                 }
@@ -36,8 +31,4 @@ const App = (props: PropsForApp) => {
         </div>
     );
 };
-const mapStateToProps = (state: TaskState) => {
-    return {todolst: state.todolst}
-}
 
-export const WrappedApp = connect(mapStateToProps)(App);

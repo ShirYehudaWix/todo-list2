@@ -1,6 +1,6 @@
 import style from "../App/App.module.css";
 import * as React from "react";
-import {PropsForTask} from "../../utils/interfaces";
+import {PropsForTask} from "./types";
 
 export const Task = (props: PropsForTask) => {
     return (

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import style from '../App/App.module.css';
-import {PropsForTodoList} from "../../utils/interfaces";
-import {WrappedTask} from "./WrappedTask";
+import {ConnectedTask} from "../task/ConnectedTask";
+import {PropsForTodoList} from "./types";
 
 
 export const TodoList = (props: PropsForTodoList): JSX.Element => {
@@ -10,7 +10,7 @@ export const TodoList = (props: PropsForTodoList): JSX.Element => {
         return <ul className={classType}>{
             props.todolst.map((todo) => (
                 (todo.finished === finish) &&
-                <WrappedTask key={todo.id} id={todo.id}/>
+                <ConnectedTask key={todo.id} id={todo.id}/>
             ))
         }
         </ul>

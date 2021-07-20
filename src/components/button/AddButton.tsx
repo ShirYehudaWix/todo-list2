@@ -1,6 +1,6 @@
 import * as React from 'react';
-import style from './App/App.module.css'
-import {PropsForAddButton} from "../utils/interfaces";
+import style from '../App/App.module.css'
+import {PropsForAddButton} from "./types";
 
 export const AddButton = (props: PropsForAddButton) => {
     const openAddTask = () => {

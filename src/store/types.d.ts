@@ -1,7 +1,8 @@
-import {todoTask} from "../utils/interfaces";
-
-type TaskState = {
-    todolst: todoTask[]
+import {todoTask} from "../components/task/types";
+import {Option} from "../components/addTask/types"
+type StoreState = {
+    todolst: todoTask[],
+    optionList:Option[]
 }
 
 type TaskAction = {

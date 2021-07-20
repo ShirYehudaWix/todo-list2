@@ -1,16 +1,22 @@
 import * as actionTypes from "./actionTypes"
-import {TaskState} from "./types";
-import {todoTask} from "../utils/interfaces";
+import {StoreState} from "./types";
 import {AnyAction} from "redux";
+import {todoTask} from "../components/task/types";
 
-const initialState: TaskState = {
-    todolst: []
+const initialState: StoreState = {
+    todolst: [],
+    optionList: [
+        {label: "Labels?", value: ""},
+        {label: "Work", value: "Work"},
+        {label: "Home", value: "Home"},
+        {label: "Wife", value: "Wife"},
+        {label: "Garden", value: "Garden"},]
 }
 
 const reducer = (
-    state: TaskState = initialState,
+    state: StoreState = initialState,
     action: AnyAction
-): TaskState => {
+): StoreState => {
     switch (action.type) {
         case actionTypes.ADD_TASK:
             const newTask: todoTask = {
@@ -21,13 +27,16 @@ const reducer = (
             }
             return {
                 todolst: [...state.todolst, newTask],
+                optionList: state.optionList
             }
+
         case actionTypes.UPDATE_TASK_FINISHED:
             const UpdatingIndex = state.todolst.findIndex(todo => todo.id === action.id)
             const newList = state.todolst;
             newList[UpdatingIndex].finished = !newList[UpdatingIndex].finished;
             return {
-                todolst: [...newList]
+                todolst: [...newList],
+                optionList: state.optionList
             }
         default:
             return state
