@@ -1,5 +1,5 @@
 import * as React from 'react';
-import style from '../App/App.module.css'
+import style from './headerStyle.module.css'
 
 export const Header = () => {
     return (<div className={style.header}>

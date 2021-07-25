@@ -1,5 +1,5 @@
-import {DispatchForTask, StoreState} from "../../store/types";
-import {UPDATE_TASK_FINISHED} from "../../store/actionTypes";
+import {DispatchForTask, StoreState} from "../../../store/types";
+import {UPDATE_TASK_FINISHED} from "../../../store/actionTypes";
 import {connect} from "react-redux";
 import {Task} from "./Task";
 import {PropsForConnectedTask, PropsForTask} from "./types";

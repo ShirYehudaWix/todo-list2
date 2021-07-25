@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import {DispatchForAddTask, StoreState} from "../../store/types";
 import {ADD_TASK} from "../../store/actionTypes";
 import {AddTaskPure} from "./AddTaskPure";
-import {todoTask} from "../task/types";
+import {todoTask} from "../toDoList/task/types";
 
 const mapStateToProps = (state:StoreState) => {
     return {optionList: state.optionList}

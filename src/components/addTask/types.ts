@@ -1,4 +1,4 @@
-import {todoTask} from "../task/types";
+import {todoTask} from "../toDoList/task/types";
 
 export type Option = {
     value: string,

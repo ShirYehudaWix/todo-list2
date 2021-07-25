@@ -1,6 +1,6 @@
 import * as React from 'react';
-import style from '../App/App.module.css';
-import {ConnectedTask} from "../task/ConnectedTask";
+import style from './todoListStle.module.css';
+import {ConnectedTask} from "./task/ConnectedTask";
 import {PropsForTodoList} from "./types";
 
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import style from '../App/App.module.css'
+import style from './addTaskStyle.module.css'
 import {PropsForAddTask} from "./types";
-import {todoTask} from "../task/types";
+import {todoTask} from "../toDoList/task/types";
 
 export const AddTaskPure = (props: PropsForAddTask) => {
     const [title, setTitle] = React.useState("")

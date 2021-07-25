@@ -1,4 +1,4 @@
-import style from "../App/App.module.css";
+import style from "./taskStyle.module.css";
 import * as React from "react";
 import {PropsForTask} from "./types";
 

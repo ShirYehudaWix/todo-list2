@@ -1,7 +1,7 @@
 import * as actionTypes from "./actionTypes"
 import {StoreState} from "./types";
 import {AnyAction} from "redux";
-import {todoTask} from "../components/task/types";
+import {todoTask} from "../components/toDoList/task/types";
 
 const initialState: StoreState = {
     todolst: [],

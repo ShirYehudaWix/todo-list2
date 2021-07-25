@@ -1,4 +1,4 @@
-import {todoTask} from "../components/task/types";
+import {todoTask} from "../components/toDoList/task/types";
 import {Option} from "../components/addTask/types"
 type StoreState = {
     todolst: todoTask[],
