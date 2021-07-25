@@ -1,0 +1,14 @@
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+}
+.header {
+    composes: flexContainer;
+    align-self: start;
+    font-family: "Arial Black";
+    font-size: 210%;
+    text-align: center;
+}

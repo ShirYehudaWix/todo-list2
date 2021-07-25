@@ -1,0 +1,71 @@
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+}
+
+.flexContained {
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #ffffff;
+    box-shadow: 2px 3px #e0d6da;
+    margin: 2%;
+    padding: 1%;
+}
+.form {
+    background-color: #b6e6f4;
+    padding: 3%;
+    width: 35%;
+    min-width: 275px;
+}
+.addTask {
+    composes: flexContained;
+    composes: flexContainer;
+
+}
+
+
+.formInput {
+    width: 93%;
+    padding: 3%;
+    margin-right: -15px;
+    outline: none;
+
+}
+
+.formButton {
+    background: linear-gradient(0deg, rgb(92, 132, 146) 0%, rgb(121, 174, 189) 100%);
+    padding: 4%;
+    color: #95dde9;
+    border: none;
+    border-radius: 5px;
+    width: 45%
+}
+
+.formButton:hover {
+    background: linear-gradient(0deg, rgb(71, 101, 112) 0%, rgb(99, 142, 154) 100%);
+    box-shadow: 1px 1px 5px #406c74;
+}
+
+.formAddButton {
+    composes: formButton;
+    margin-right: 2%;
+}
+
+.formCancelButton {
+    composes: formButton;
+    float: right;
+}
+
+.formSelector {
+
+    background-color: #638e9a;
+    color: white;
+    padding: 3%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    outline: none;
+}

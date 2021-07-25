@@ -1,0 +1,50 @@
+
+
+.task {
+    border: 5px solid #ffffff;
+    box-shadow: 2px 3px #e0d6da;
+    margin: 1%;
+    position: relative;
+}
+
+.taskTitle {
+    padding-left: 3%;
+}
+
+.taskHome {
+    composes: task;
+    background-color: #b8ffc1;
+}
+
+.taskWork {
+    composes: task;
+    background-color: #ffd188;
+}
+
+.taskWife {
+    composes: task;
+    background-color: #f8c1ef;
+}
+
+.taskGarden {
+    composes: task;
+    background-color: #c8a99c;
+}
+
+
+
+.checkbox {
+    position: absolute;
+    right: 4%;
+    top: 30%;
+    width: 20px;
+    height: 20px;
+}
+
+.checkedTask {
+    composes: task;
+    background-color: #e9e8e8;
+    color: #b8b0b8;
+    font-style: italic;
+    text-decoration: line-through;
+}

@@ -1,0 +1,20 @@
+.addButton {
+    font-weight: bolder;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    /*position: fixed;*/
+    /*margin-right:  -30%;*/
+    /*margin-top: -10%;*/
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #9cc7d0;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 10px #406c74;
+}
+
+.addButton:hover {
+    background: linear-gradient(0deg, rgba(156, 199, 208, 1) 0%, rgba(182, 230, 244, 1) 100%)
+}

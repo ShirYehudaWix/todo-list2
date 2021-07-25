@@ -1,0 +1,17 @@
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.undone {
+    composes: list;
+}
+
+.checked {
+    composes: list;
+}
+
+.differ {
+    border-bottom: 3px solid #b7d8f3;
+}
