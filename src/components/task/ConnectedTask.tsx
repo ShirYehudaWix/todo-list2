@@ -2,9 +2,9 @@ import {DispatchForTask, StoreState} from "../../store/types";
 import {UPDATE_TASK_FINISHED} from "../../store/actionTypes";
 import {connect} from "react-redux";
 import {Task} from "./Task";
-import {PropsForTask} from "./types";
+import {PropsForConnectedTask, PropsForTask} from "./types";
 
-const mapStateToProps = (state: StoreState, ownProps: PropsForTask) => {
+const mapStateToProps = (state: StoreState, ownProps: PropsForConnectedTask) => {
     const index = state.todolst.findIndex(t => t.id === ownProps.id)
     return {task: state.todolst[index]}
 }

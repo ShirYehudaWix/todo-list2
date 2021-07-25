@@ -10,3 +10,6 @@ export interface PropsForTask {
     id: number,
     setChecked: (id: number) => void
 }
+export interface PropsForConnectedTask {
+    id: number,
+}
