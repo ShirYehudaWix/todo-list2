@@ -1,7 +1,7 @@
 import * as React from 'react';
 import style from './addTaskStyle.module.css'
 import {PropsForAddTask} from "./types";
-import {todoTask} from "../toDoList/task/types";
+import {newTodoTask} from "../toDoList/task/types";
 
 export const AddTaskPure = (props: PropsForAddTask) => {
     const [title, setTitle] = React.useState("")
@@ -10,7 +10,7 @@ export const AddTaskPure = (props: PropsForAddTask) => {
     const addTask = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         const idNumber=Math.random() % 1000
-        const newTask: todoTask = {id:idNumber , task: title, labels: label, finished: false}
+        const newTask: newTodoTask = { task: title, labels: label, finished: false}
         props.setTodoList(newTask)
         props.setIsAddTaskOpen(false)
     }

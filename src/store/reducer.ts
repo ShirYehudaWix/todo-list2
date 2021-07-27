@@ -4,7 +4,7 @@ import {AnyAction} from "redux";
 import {todoTask} from "../components/toDoList/task/types";
 
 const initialState: StoreState = {
-    todolst: [],
+    todoList: [],
     optionList: [
         {label: "Labels?", value: ""},
         {label: "Work", value: "Work"},
@@ -20,22 +20,22 @@ const reducer = (
     switch (action.type) {
         case actionTypes.ADD_TASK:
             const newTask: todoTask = {
-                id: action.task.id, // not really unique
+                id:  Math.random() % 1000, // not really unique
                 task: action.task.task,
                 labels: action.task.labels,
                 finished: action.task.finished,
             }
             return {
-                todolst: [...state.todolst, newTask],
+                todoList: [...state.todoList, newTask],
                 optionList: state.optionList
             }
 
         case actionTypes.UPDATE_TASK_FINISHED:
-            const UpdatingIndex = state.todolst.findIndex(todo => todo.id === action.id)
-            const newList = state.todolst;
+            const UpdatingIndex = state.todoList.findIndex(todo => todo.id === action.id)
+            const newList = state.todoList;
             newList[UpdatingIndex].finished = !newList[UpdatingIndex].finished;
             return {
-                todolst: [...newList],
+                todoList: [...newList],
                 optionList: state.optionList
             }
         default:

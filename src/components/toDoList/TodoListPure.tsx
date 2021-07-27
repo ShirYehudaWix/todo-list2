@@ -4,11 +4,11 @@ import {ConnectedTask} from "./task/ConnectedTask";
 import {PropsForTodoList} from "./types";
 
 
-export const TodoList = (props: PropsForTodoList): JSX.Element => {
+export const TodoListPure = (props: PropsForTodoList): JSX.Element => {
 
     const listGenerator = (finish: boolean, classType: string): JSX.Element => {
         return <ul className={classType}>{
-            props.todolst.map((todo) => (
+            props.todoList.map((todo) => (
                 (todo.finished === finish) &&
                 <ConnectedTask key={todo.id} id={todo.id}/>
             ))

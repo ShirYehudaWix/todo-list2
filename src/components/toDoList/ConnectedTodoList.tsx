@@ -1,8 +1,8 @@
 import {StoreState} from "../../store/types";
 import {connect} from "react-redux";
-import {TodoList} from "./TodoList";
+import {TodoListPure} from "./TodoListPure";
 
 const mapStateToProps = (state: StoreState) => {
-    return {todolst: state.todolst}
+    return {todoList: state.todoList}
 }
-export const ConnectedTodoList = connect(mapStateToProps)(TodoList)
+export const ConnectedTodoList = connect(mapStateToProps)(TodoListPure)

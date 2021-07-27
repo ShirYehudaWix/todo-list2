@@ -1,5 +1,12 @@
+
+
 export interface todoTask {
     id: number,
+    task: string,
+    labels: string,
+    finished: boolean
+}
+export interface newTodoTask {
     task: string,
     labels: string,
     finished: boolean

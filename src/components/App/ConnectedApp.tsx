@@ -3,6 +3,6 @@ import {StoreState} from "../../store/types";
 import {App} from "./AppPure";
 
 const mapStateToProps = (state: StoreState) => {
-    return {todolst: state.todolst}
+    return {todoList: state.todoList}
 }
 export const WrappedApp = connect(mapStateToProps)(App);

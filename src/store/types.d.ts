@@ -1,7 +1,8 @@
 import {todoTask} from "../components/toDoList/task/types";
 import {Option} from "../components/addTask/types"
+
 type StoreState = {
-    todolst: todoTask[],
+    todoList: todoTask[],
     optionList:Option[]
 }
 
@@ -15,5 +16,3 @@ type ActionForTask = {
 }
 
 type DispatchType = (args: TaskAction) => TaskAction
-type DispatchForAddTask = (args: TaskAction) => TaskAction
-type DispatchForTask = (args: ActionForTask) => ActionForTask

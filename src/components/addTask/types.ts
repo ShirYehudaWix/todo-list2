@@ -1,4 +1,5 @@
-import {todoTask} from "../toDoList/task/types";
+import {newTodoTask, todoTask} from "../toDoList/task/types";
+import {TaskAction} from "../../store/types";
 
 export type Option = {
     value: string,
@@ -6,13 +7,10 @@ export type Option = {
 }
 
 export interface PropsForAddTask {
-    setTodoList: (todolst: todoTask) => void,
-    setIsAddTaskOpen: (someVar: boolean) => void,
-    optionList: Option[]
-}
-export interface StateForAddTask {
-    setTodoList: (todolst: todoTask) => void,
-    setIsAddTaskOpen: (someVar: boolean) => void,
+    setTodoList: (todoList: newTodoTask) => void,
+    setIsAddTaskOpen: (bool: boolean) => void,
     optionList: Option[]
 }
 
+
+export type DispatchForAddTask = (args: TaskAction) => TaskAction
