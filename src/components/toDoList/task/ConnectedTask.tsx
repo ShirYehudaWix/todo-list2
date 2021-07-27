@@ -1,8 +1,8 @@
-import {StoreState} from "../../../store/types";
+
 import {TaskActions} from "../../../store/actionTypes";
 import {connect} from "react-redux";
 import {Task} from "./TaskPure";
-import {DispatchForTask, PropsForConnectedTask} from "./types";
+import {DispatchForTask, PropsForConnectedTask,StoreState} from "./types";
 
 const mapStateToProps = (state: StoreState, ownProps: PropsForConnectedTask) => {
     const index = state.todoList.findIndex(t => t.id === ownProps.id)

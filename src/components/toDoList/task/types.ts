@@ -1,3 +1,4 @@
+import {Option} from "../../addTask/types";
 
 export interface todoTask {
     id: number,
@@ -25,3 +26,9 @@ type ActionForTask = {
     type: string
     id: number
 }
+
+export type StoreState = {
+    todoList: todoTask[],
+    optionList:Option[]
+}
+
