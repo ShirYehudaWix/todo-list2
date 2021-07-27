@@ -1,5 +1,4 @@
 
-
 export interface todoTask {
     id: number,
     task: string,
@@ -19,4 +18,10 @@ export interface PropsForTask {
 }
 export interface PropsForConnectedTask {
     id: number,
+}
+export type DispatchForTask=(args:ActionForTask)=>ActionForTask
+
+type ActionForTask = {
+    type: string
+    id: number
 }

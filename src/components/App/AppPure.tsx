@@ -8,11 +8,13 @@ import {PropsForApp} from "./types";
 
 export const App = (props: PropsForApp) => {
     const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false)
-
+    const openAddTask = () => {
+        setIsAddTaskOpen(true)
+    }
     return (
         <div className={style.root}>
             <Header/>
-            <AddButton isAddTaskOpen={isAddTaskOpen} setIsAddTaskOpen={setIsAddTaskOpen}/>
+            {!isAddTaskOpen&&<AddButton  setIsAddTaskOpen={openAddTask}/>}
             <div className={style.middlePage}>
                 {isAddTaskOpen ?
                     <ConnectedAddTask setIsAddTaskOpen={setIsAddTaskOpen}/>

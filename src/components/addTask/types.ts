@@ -1,5 +1,9 @@
 import {newTodoTask, todoTask} from "../toDoList/task/types";
-import {TaskAction} from "../../store/types";
+
+type TaskAction = {
+    type: string
+    task: todoTask
+}
 
 export type Option = {
     value: string,

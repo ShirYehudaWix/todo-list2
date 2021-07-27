@@ -10,9 +10,6 @@ type TaskAction = {
     type: string
     task: todoTask
 }
-type ActionForTask = {
-    type: string
-    id: number
-}
+
 
 type DispatchType = (args: TaskAction) => TaskAction

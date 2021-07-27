@@ -1,4 +1,4 @@
-import * as actionTypes from "./actionTypes"
+import {TaskActions} from "./actionTypes"
 import {StoreState} from "./types";
 import {AnyAction} from "redux";
 import {todoTask} from "../components/toDoList/task/types";
@@ -18,7 +18,7 @@ const reducer = (
     action: AnyAction
 ): StoreState => {
     switch (action.type) {
-        case actionTypes.ADD_TASK:
+        case TaskActions.addTask:
             const newTask: todoTask = {
                 id:  Math.random() % 1000, // not really unique
                 task: action.task.task,
@@ -30,7 +30,7 @@ const reducer = (
                 optionList: state.optionList
             }
 
-        case actionTypes.UPDATE_TASK_FINISHED:
+        case TaskActions.updateTaskFinished:
             const UpdatingIndex = state.todoList.findIndex(todo => todo.id === action.id)
             const newList = state.todoList;
             newList[UpdatingIndex].finished = !newList[UpdatingIndex].finished;

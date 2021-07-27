@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {StoreState} from "../../store/types";
-import {ADD_TASK} from "../../store/actionTypes";
+import {TaskActions} from "../../store/actionTypes";
 import {AddTaskPure} from "./AddTaskPure";
 import {todoTask} from "../toDoList/task/types";
 import {DispatchForAddTask} from "./types";
@@ -11,7 +11,7 @@ const mapStateToProps = (state:StoreState) => {
 
 const mapDispatchToProps = (dispatch: DispatchForAddTask) => {
     return {
-        setTodoList: (task: todoTask) => dispatch({type: ADD_TASK, task: task})
+        setTodoList: (task: todoTask) => dispatch({type: TaskActions.addTask, task: task})
     }
 }
 export const ConnectedAddTask = connect(mapStateToProps, mapDispatchToProps)(AddTaskPure)
