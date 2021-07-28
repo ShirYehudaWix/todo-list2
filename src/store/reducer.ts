@@ -5,7 +5,7 @@ import {todoTask} from "../components/toDoList/task/types";
 
 const initialState: StoreState = {
     todoList: [],
-    optionList: [
+    optionList: [//Shir: optionList is hard-coded here, never changed and only used in AddTask. should it be managed in the store?
         {label: "Labels?", value: ""},
         {label: "Work", value: "Work"},
         {label: "Home", value: "Home"},

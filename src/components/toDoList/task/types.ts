@@ -6,13 +6,13 @@ export interface todoTask {
     labels: string,
     finished: boolean
 }
-export interface newTodoTask {
+export interface newTodoTask {//Shir: this can be constructed from todoTask using typescript pick\omit
     task: string,
     labels: string,
     finished: boolean
 }
 
-export interface PropsForTask {
+export interface PropsForTask { 
     task: todoTask,
     id: number,
     setChecked: (id: number) => void
@@ -30,5 +30,5 @@ type ActionForTask = {
 export type StoreState = {
     todoList: todoTask[],
     optionList:Option[]
-}
-
+} 
+//Shir: this type is also defined in store, and always imported from there

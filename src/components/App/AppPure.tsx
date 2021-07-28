@@ -8,10 +8,11 @@ import {PropsForApp} from "./types";
 
 export const App = (props: PropsForApp) => {
     const [isAddTaskOpen, setIsAddTaskOpen] = React.useState(false)
+    //Shir: why do you use react useState here and not redux?
     const openAddTask = () => {
         setIsAddTaskOpen(true)
     }
-    return (
+    return (//Shir: both AddButton and ConnectedTodoList are shown only if !isAddTaskOpen. maybe they should be in the smae component, which is rendered when !isAddTaskOpen.
         <div className={style.root}>
             <Header/>
             {!isAddTaskOpen&&<AddButton  setIsAddTaskOpen={openAddTask}/>}

@@ -3,6 +3,7 @@ import style from './todoListStle.module.css';
 import {ConnectedTask} from "./task/ConnectedTask";
 import {PropsForTodoList} from "./types";
 
+//Shir: general note - not sure if task should be inside toDoList, and maybe separate into connected and pure folders
 
 export const TodoListPure = (props: PropsForTodoList): JSX.Element => {
 
@@ -18,7 +19,7 @@ export const TodoListPure = (props: PropsForTodoList): JSX.Element => {
 
     return (
         <div> {
-            listGenerator(false, style.undone)
+            listGenerator(false, style.undone)// Shir: maybe use done/undone or checked/unchecked to be consistent
         }
             <div className={style.differ}/>
             {

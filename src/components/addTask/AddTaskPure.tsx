@@ -9,12 +9,12 @@ export const AddTaskPure = (props: PropsForAddTask) => {
 
     const addTask = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
-        const idNumber=Math.random() % 1000
-        const newTask: newTodoTask = { task: title, labels: label, finished: false}
+        const idNumber=Math.random() % 1000 //Shir: you are generating the id both here and in the reducer
+        const newTask: newTodoTask = { task: title, labels: label, finished: false}//Shir: same here
         props.setTodoList(newTask)
         props.setIsAddTaskOpen(false)
     }
-    const cancelPress = () => {
+    const cancelPress = () => {//Shir: maybe change name to onCancel?
         props.setIsAddTaskOpen(false);
     }
 

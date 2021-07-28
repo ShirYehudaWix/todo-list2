@@ -1,6 +1,6 @@
 import {newTodoTask, todoTask} from "../toDoList/task/types";
 
-type TaskAction = {
+type TaskAction = {//Shir: this is not used anywhere (also defined in store)
     type: string
     task: todoTask
 }
