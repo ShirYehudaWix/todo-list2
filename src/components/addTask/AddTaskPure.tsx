@@ -16,6 +16,7 @@ export const AddTaskPure = (props: PropsForAddTask) => {
         const newTask: newTodoTask = { task: title, labels: label, finished: false}
         props.setTodoList(newTask)
         props.setIsAddTaskOpen(false)
+        console.log()
     }
     const cancelPress = () => {
         props.setIsAddTaskOpen(false);
