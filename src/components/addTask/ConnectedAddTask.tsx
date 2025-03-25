@@ -6,7 +6,7 @@ import {todoTask} from "../toDoList/task/types";
 import {DispatchForAddTask} from "./types";
 
 const mapStateToProps = (state:StoreState) => {
-    return {optionList: state.optionList,aaa:'sfsdfsdfwef'}
+    return {optionList: state.optionList}
 }
 
 const mapDispatchToProps = (dispatch: DispatchForAddTask) => {
