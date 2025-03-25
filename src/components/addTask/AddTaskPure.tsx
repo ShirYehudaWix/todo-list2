@@ -10,6 +10,7 @@ export const AddTaskPure = (props: PropsForAddTask) => {
     const addTask = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         let counter =0
         console.log(counter)
+        const id=3
         e.preventDefault();
         const idNumber=Math.random() % 1000
         const newTask: newTodoTask = { task: title, labels: label, finished: false}
