@@ -9,9 +9,9 @@ export const AddTaskPure = (props: PropsForAddTask) => {
 
     const addTask = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         let counter =0
+        console.log(counter)
         e.preventDefault();
         const idNumber=Math.random() % 1000
-        counter++
         const newTask: newTodoTask = { task: title, labels: label, finished: false}
         props.setTodoList(newTask)
         props.setIsAddTaskOpen(false)
